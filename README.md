@@ -35,7 +35,7 @@ Simple **@propertyWrapper** which resolves dependecies from passed provider or f
 ### Example
     class MyClass {
             
-        @Inject(provider: CustomDependencyProvider.self)
+        @Inject(resolver: CustomDependencyProvider.resolver)
         var repository: Repository?
                 
     }
@@ -64,7 +64,7 @@ Same as Inject **@propertyWrapper** but with force resolving, can cause runtime 
 
     class MyClass {
     
-        @ForceInject(provider: CustomDependencyProvider, name: "mock": arguments: "https://google.com", "TLS")
+        @ForceInject(resolver: CustomDependencyProvider.resolver, name: "mock": arguments: "https://google.com", "TLS")
         var repository: Repository
     
     }
